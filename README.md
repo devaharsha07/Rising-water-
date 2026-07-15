@@ -172,9 +172,7 @@ Government agencies and researchers can validate historical flood data using the
 
 # 👥 Team Members
 
-- **chunduru mohan rao** – Team Lead
-- **Tummala sunil**
-- **venkatrao paladugu**
+- Manchala Deva Harsha
 
 ---
 
