@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Waters</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">🌊</div>
+
+            <div>
+                <h2>RISING WATERS</h2>
+                <p>AI Flood Intelligence Platform</p>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">How It Works</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="safe-btn">
+            🌧 Stay Safe
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>Flood Prediction System</h1>
+
+        <p>
+            Predict flood risk using Machine Learning and Environmental Parameters
+        </p>
+
+    </section>
+
+    <!-- Feature Cards -->
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            🌧
+            <h3>Weather Intelligence</h3>
+            <p>Uses environmental parameters for prediction.</p>
+        </div>
+
+        <div class="feature-card">
+            🤖
+            <h3>AI Powered</h3>
+            <p>Built using XGBoost Machine Learning.</p>
+        </div>
+
+        <div class="feature-card">
+            ⚡
+            <h3>Fast Prediction</h3>
+            <p>Predicts flood risk instantly.</p>
+        </div>
+
+        <div class="feature-card">
+            ☁
+            <h3>IBM Cloud Ready</h3>
+            <p>Ready for deployment on cloud platforms.</p>
+        </div>
+
+    </div>
+
+    <!-- Prediction Form -->
+
+    <div class="glass-card">
+
+        <h2 class="card-title">🌧 Enter Parameters</h2>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-grid">
+
+                {% for col, label in columns %}
+
+                <div class="input-box">
+
+                    <label>{{ label }}</label>
+
+                    <input type="number" name="{{ col }}" min="0" max="10" step="0.01" placeholder="0 - 10" required>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            <button class="predict-btn" type="submit">
+                🌊 Predict Flood Risk
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Disclaimer -->
+
+    <div class="disclaimer">
+        ⚠ This prediction is generated using an XGBoost Machine Learning model.
+        Always follow official weather department warnings.
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <h3>🌊 Rising Waters</h3>
+
+        <p>AI Powered Flood Intelligence Platform</p>
+
+        <p>
+            Python • Flask • Machine Learning • XGBoost • IBM Cloud
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

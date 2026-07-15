@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">🌊</div>
+
+            <div>
+                <h2>RISING WATERS</h2>
+                <p>AI Flood Intelligence Platform</p>
+            </div>
+
+        </div>
+
+        <div class="safe-btn">
+            🌧 Stay Safe
+        </div>
+
+    </nav>
+
+    <!-- Result Card -->
+
+    <div class="glass-card result-card">
+
+        <h1>🌧 Flood Prediction Result</h1>
+
+        <div class="status-box {{ status }}">
+
+            {% if status == "danger" %}
+
+            <h2>🚨 High Flood Risk</h2>
+
+            {% elif status == "warning" %}
+
+            <h2>⚠ Moderate Flood Risk</h2>
+
+            {% else %}
+
+            <h2>✅ Low Flood Risk</h2>
+
+            {% endif %}
+
+        </div>
+
+        <h3 style="margin-top:20px;">Predicted Flood Probability</h3>
+
+        <div class="probability">
+
+            {{ percentage }}%
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div class="progress-fill" style="width: {{ percentage }}%;">
+
+            </div>
+
+        </div>
+
+        <!-- Summary -->
+
+        <div class="summary">
+
+            <h3>📊 Prediction Summary</h3>
+
+            <p>
+
+                This prediction was generated using our
+                <strong>XGBoost Machine Learning Model</strong>.
+
+                The model analyses rainfall, drainage,
+                environmental conditions, infrastructure,
+                and disaster-related parameters to estimate
+                the probability of flood occurrence.
+
+            </p>
+
+        </div>
+
+        <!-- Recommendation -->
+
+        <div class="recommendation">
+
+            <h3>🤖 AI Safety Recommendations</h3>
+
+            <ul>
+
+                {% for item in recommendation %}
+
+                <li>{{ item }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <a href="/" class="back-btn">
+
+            ← Predict Again
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
